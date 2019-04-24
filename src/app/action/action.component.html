@@ -1,0 +1,15 @@
+<h1>Mobile Details</h1>
+<table border=2>
+  <tr>
+    <th appSortDirective [sortKey]="'mobId'" [data]="mData">Mobile Id</th>
+    <th appSortDirective [sortKey]="'mobName'" [data]="mData">Mobile Name</th>
+    <th appSortDirective [sortKey]="'mobPrice'" [data]="mData">Mobile Price</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let mobile of mData">
+    <td>{{mobile.mobId}}</td>
+    <td>{{mobile.mobName}}</td>
+    <td>{{mobile.mobPrice | currency}}</td>
+    <td><input type="button" value="Delete" (click)="delete(mobile)"></td>
+  </tr>
+</table>
